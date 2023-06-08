@@ -91,7 +91,7 @@ import OtherCart from '../components/OtherCart.astro';
 const activePage = window.location.pathname;
 const navLinks = document.querySelectorAll(".navLinks").forEach(link => {
 	if(link.href.includes(`${activePage}`)){
-		link.classList.add('active');
+		link.classList.add('navactive');
 	}
 })
 
