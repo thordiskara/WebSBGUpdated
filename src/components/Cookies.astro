@@ -3,9 +3,12 @@
 ---
 <div id="cookieboks" class="cookiecontainer bottom-0 fixed w-full">
     <div class="z-200 accentBody">
-       <div class="bg-black text-white flex justify-between px-space-16-24 py-space-16-24 ">
-        <p class="accentBody">This site is using cookies. <a class="underline" href="/privacy/">Learn more about our cookies</a></p>
-        <div class="flex gap-8">
+       <div class="bg-black text-white flex flex-col md:flex-row md:justify-between px-space-16-24 py-space-16-24 ">
+        <div class="flex flex-col md:flex-row md:gap-1">
+            <p class="accentBody">This site is using cookies.</p> 
+            <a class="underline" href="/privacy/">Learn more about our cookies</a>
+        </div>
+        <div class="flex gap-8 pt-space-24-32 md:pt-0 justify-end md:justify-normal">
             <button id="accepter" class="cursor-pointer">Accept</button>
             <button id="afvis" class="text-[#B8B8B8] cursor-pointer">Decline</button>
         </div>
