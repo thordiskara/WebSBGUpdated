@@ -12,11 +12,11 @@ import Video from '../img/collectionpages/Contra/ContraHclip.mp4';
 
 <Layout>
     <div class="breadcrumbs py-space-24-32 px-body-x overlinep col-span-full">
-        <a class="hover-underline-animation" href="/collections/">Collections</a> 
+        <a class="hover-underline-breadcrumb" href="/collections/">Collections</a> 
         / <a href="/">The Contrapposto Concept</a>
     </div>
     <!-- HERO VIDEO -->
-    <video src={HeroVideo} autoplay loop class="m-auto w-[75vw]"></video>
+    <video src={HeroVideo} autoplay loop muted class="m-auto w-[75vw]"></video>
     <div class="px-body-x md:grid md:grid-cols-2">
         <h1 class="py-space-32-48">The Contrapposto Concept</h1>
           <div class="grid relative justify-items-end">
@@ -65,6 +65,10 @@ import Video from '../img/collectionpages/Contra/ContraHclip.mp4';
 
 </div>
 
+<section class="text-end pr-body-x pt-space-64-80 links underline">
+  <a href="/lichen/"> See next collection</a>
+</section>
+
 <!-- desktop -->
 
 </Layout>
@@ -111,6 +115,7 @@ import Video from '../img/collectionpages/Contra/ContraHclip.mp4';
     background-size: cover;
     background-image: url('../img/collectionpages/Contra/contra-click-small.webp');
     border: var(--color-light-grey) 1.2px solid ;
+    z-index: 10;
 
 }
 
