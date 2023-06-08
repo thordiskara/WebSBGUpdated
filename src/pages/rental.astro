@@ -8,8 +8,8 @@ import Garment from '../components/GarmentCard.astro'
     <section id="filters" class="md:col-span-5 col-span-4 sticky md:top-space-80-160 top-0 md:h-[70vh] bg-white">
     <details open class="">
             <summary class="accentBody pb-2 border-b-[1px] border-black flex flex-row-reverse justify-between "><span>Filters</span></summary>
-            <div class="grid gap-1 pt-2  md:pt-4">
-                <div class="parentFilters flex col-span-full justify-between md:pb-3">
+            <div class="pt-2 md:pt-4">
+                <div class="parentFilters filterGrid">
                     <template id="parentCategoryTemplate">
                         <div class="">
                             <a class="accentBody hover-underline-breadcrumb" href="/rental/">
@@ -17,7 +17,7 @@ import Garment from '../components/GarmentCard.astro'
                         </div>
                     </template>
                 </div>
-                 <div class="flex justify-between pb-2">
+                 <div class="filterGrid filterRowGrid pt-3">
                             <div class="collFilter flex flex-col md:gap-3 gap-1">
                                 <template id="collCategoryTemplate">
                                     <div class="">
@@ -26,7 +26,7 @@ import Garment from '../components/GarmentCard.astro'
                                     </div>
                                 </template>
                             </div>
-                            <div class="typeFilter flex flex-col md:gap-3 pr-12 md:pr-16 gap-1">
+                            <div class="typeFilter flex flex-col md:gap-3   gap-1">
                                 <template id="typeCategoryTemplate">
                                     <div class="">
                                         <a class="accentBody hover-underline-breadcrumb" href="/rental/">
@@ -79,6 +79,13 @@ import Garment from '../components/GarmentCard.astro'
 
 <style>
 /* plus minus */
+
+.filterGrid {
+    display: grid;
+    grid-template-columns: 65% auto;
+    gap: 40px ;
+}
+
 
 details{
     cursor: pointer;
