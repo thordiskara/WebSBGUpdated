@@ -205,6 +205,11 @@ label {
   opacity: 1;
 }
 
+/* NAV ACTIVE */
+.active{
+  border-bottom: black solid 1px;
+}
+
 /* opacity animation */
 
 #scrollDown {

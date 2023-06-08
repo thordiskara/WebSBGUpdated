@@ -17,7 +17,15 @@ import Emblem from '../svg/logo-emblem.svg'
       <ul class="flex justify-between">
           <li><a href="/about/" class="navLinks hover-underline-animation">About</a></li>
           <li><a href="/rental/" class="navLinks hover-underline-animation">Rental</a></li>
-          <li><a href="/collections/" class="navLinks hover-underline-animation">Collections</a></li>
+          <div class="dropdown">
+            <li><a href="/collections/" class="dropbtn navLinks hover-underline-animation">Collections</a></li>
+            <div class="dropdown-content">
+              <a href="/agab/">Abject Garment, Absent Body</a>
+              <a href="/shadow/">Shadow Collection</a>
+              <a href="/contrapposto/">The Contrapposto Concept</a>
+              <a href="/lichen/">The Lichen Project</a>
+            </div>
+          </div>
           <li><a id="cartMobile" class="navLinks hover-underline-animation cursor-pointer">Cart<span id="item" class="hide">(1)</span></a></li>
       </ul>
   </nav>
@@ -46,7 +54,15 @@ import Emblem from '../svg/logo-emblem.svg'
     <ul class="flex justify-between gap-16">
         <li><a href="/rental/" class="navLinks hover-underline-animation">Rental</a></li>
         <li><a href="/"><img src={Emblem} alt="EmblemLogo"></a></li>
-        <li><a href="/collections/" class="navLinks hover-underline-animation">Collections</a></li>
+        <div class="dropdown">
+          <li><a href="/collections/" class="dropbtn navLinks hover-underline-animation">Collections</a></li>
+          <div class="dropdown-content">
+            <a href="/agab/">Abject Garment, Absent Body</a>
+            <a href="/shadow/">Shadow Collection</a>
+            <a href="/contrapposto/">The Contrapposto Concept</a>
+            <a href="/lichen/">The Lichen Project</a>
+          </div>
+        </div>
     </ul>
   </nav>
 
@@ -70,7 +86,79 @@ nav{
 
    
 
+/* Dropdown Button */
 
+@media screen and (max-width: 768px) {
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 10rem;
+  z-index: 1000;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 0;
+  text-decoration: none;
+  display: block;
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-book);
+  font-size: var(--font-size-body-btn);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {text-decoration: underline;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {}
+}
+@media screen and (min-width: 768px) {
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 14rem;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 0;
+  text-decoration: none;
+  display: block;
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-book);
+  font-size: var(--font-size-body-btn);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {text-decoration: underline;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {}
+}
 
 </style>
 
