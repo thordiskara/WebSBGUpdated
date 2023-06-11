@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Product from '../img/landing/jeans-2.webp';
 import Button from '../components/PrimaryButton.astro';
 ---
 
@@ -9,54 +8,46 @@ import Button from '../components/PrimaryButton.astro';
 <div class="mobileGrid desktopGrid">
     <!-- Order summary -->
 <div class="col-span-full pt-space-32-48 flex flex-col gap-space-32-48 lg:col-start-9 lg:col-span-4">
-    <h2 class="">Order summary</h2>
-    <div class="flex flex-col bg-lightgrey p-8 gap-space-64-80">
+    <div class="flex flex-col bg-lightgrey p-8 gap-space-24-32">
+        <h3 class="">How it works</h3>
 
-        <div class="flex gap-4 justify-between">
-            <img src={Product} alt="Picture of product" class="w-32">
-            <div class="flex flex-col  justify-between">
-                <div class="flex flex-col gap-4">
-                 <div class="flex flex-col gap-2">
-                        <p class="accentSmallBody">Abjection T-shirt</p>
-                        <p class="accentSmallBody">800 DKK</p>
-                 </div>
-                 <p class="overlinep">21/7 - 24/7 (3 days)</p>
-                </div>
-                <button class="self-end underline"><p>Remove item</p></button>
-            </div>
-        </div> 
-
-        <div class="flex flex-col gap-6 pt-6 border-t-[1px] border-mediumgrey">
-            <div class="flex flex-col gap-4 pb-6 border-b-[1px] border-mediumgrey">
-                <div class="flex justify-between ">
-                    <p class="mediumBody">Subtotal</p>
-                    <p class="mediumBody">800 DKK</p>
-                </div>
-                <div class="flex justify-between">
-                    <p class="mediumBody">Shipping</p>
-                    <p class="mediumBody">---</p>
-                </div>
-                <div class="flex justify-between">
-                    <p class="mediumBody">Cleaning fee</p>
-                    <p class="mediumBody">59 DKK</p>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <p class="mediumBody">Total</p>
-                <p class="mediumBody">859 DKK</p>
+        <div class="flex flex-col gap-space-24-32 pt-6 border-t-[1px] border-mediumgrey">
+            <ol class="flex flex-col gap-6 pb-6 border-b-[1px] border-mediumgrey">
+                <li class="flex gap-space-16-24">
+                    <p class="mediumBody">1.</p>
+                    <p>Find the item you would like to rent in the list.</p>
+                </li>
+                <li class="flex gap-space-16-24">
+                    <p class="mediumBody">2.</p>
+                    <p>Choose how long you’d like to rent the item for, your preferred payment and shipping option.</p>
+                </li>
+                <li class="flex gap-space-16-24">
+                    <p class="mediumBody">3.</p>
+                    <p>Fill out all the required fields with your information.</p>
+                </li>
+                <li class="flex gap-space-16-24">
+                    <p class="mediumBody">4.</p>
+                    <p>You will receive a confirmation email within 1-2 business days.</p>
+                </li>
+            </ol>
+            <div class="flex flex-col gap-4">
+                <p>Read more about the rental process and find answers to FAQ’s such as what happens if your requested item isn’t available, how payment works etc.</p>
+                <a href="/rentalprocess/" class="accentSmallBody underline">Rental process</a>
             </div>
         </div>
 
     </div>
 </div>
-    <!-- form -->
- <div class="col-span-full flex flex-col pt-space-64-80 gap-space-32-48 lg:col-start-2 md:col-span-6 lg:row-start-1">
-        <h2 class="'">Rental request <form action="" method="get"></form></h2>
-        <form name="Customer info" action="/success/" method="POST" data-netlify="true" class="col-span-full lg:col-span-4 flex flex-col gap-space-32-48">
-            <div class="flex flex-col gap-space-16-24">
 
-                <div class="flex flex-col gap-1">
-                    <label for="items">Choose item</label>
+    <!-- form -->
+ <div class="col-span-full flex flex-col gap-space-32-48 pt-space-64-80 lg:col-start-2 md:col-span-6 lg:row-start-1">
+        <h2 class="'">Rental request</h2>
+        <form name="Customer info" action="/success/" method="POST" data-netlify="true" class="col-span-full lg:col-span-4 flex flex-col gap-space-32-48">
+          <!-- rental info -->
+            <div class="flex flex-col gap-space-16-24">
+<!-- dropdown -->
+                <div class="flex flex-col gap-3">
+                    <label for="items" class="">Choose item</label>
                     <select name="items" id="items" class="px-1.5 py-2.5 border-[1px]  border-solid border-mediumgrey">
                         <option value="" disabled selected>Choose an item from the list</option>
                         <option value="Abject Fiber Lace Skirt">Abject Fiber Lace Skirt</option>
@@ -73,9 +64,10 @@ import Button from '../components/PrimaryButton.astro';
                         <option value="Shadow Top">Shadow Top</option>
                     </select>
                 </div>
-                <div class="flex flex-col gap-1"> 
+                <!-- rental period -->
+                <div class="flex flex-col gap-3"> 
                     <p>Rental period</p>
-                    <div class="radioBar">
+                    <div class="radioBar flex gap-space-24-32">
                         <input type="radio" id="threeDays" name="rentalPeriod" value="3 days">
                         <label for="threeDays">3 days</label>
                     
@@ -86,47 +78,81 @@ import Button from '../components/PrimaryButton.astro';
                         <label for="oneWeek">1 week</label> 
                     </div>
                 </div>
-
+                <!-- choose dates -->
+             <div class="flex flex-col gap-3">   
+                <label for="startDate">Choose start date</label>
+                <input type="date" id="startDate" name="startDate" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey lg:w-[33%]">
             </div>
+            <!-- delivery options -->
+            <div class="flex flex-col gap-3"> 
+                <p>Delivery method</p>
+                <div class="radioBar flex gap-space-24-32">
+                    <input type="radio" id="collect" name="deliveryMethod" value="Pick up">
+                    <label for="collect">Pick up</label>
+                
+                    <input type="radio" id="ship" name="deliveryMethod" value="Ship item">
+                    <label for="ship">Ship item</label>
+                </div>
+            </div>
+              <!-- payment options -->
+              <div class="flex flex-col gap-3"> 
+                <p>Payment method</p>
+                <div class="radioBar flex gap-space-24-32">
+                    <input type="radio" id="mobilePay" name="paymenyMethod" value="MobilePay">
+                    <label for="mobilepay">Mobilepay</label>
+                
+                    <input type="radio" id="bankTransfer" name="paymenyMethod" value="Bank transfer">
+                    <label for="bankTransfer">Bank transfer</label>
+
+                    <input type="radio" id="payPickup" name="paymenyMethod" value="Pay at pick up">
+                    <label for="payPickup">Pay at pick up</label>
+                </div>
+            </div>
+        </div>
+        <!-- start of personal info -->
 <div class="flex flex-col gap-space-16-24">
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-3">
                    <label for="fullname">Name *</label>
                    <input  required type="text" id="fullname" name="fullname" placeholder="Please enter your full name" autocomplete="name" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
                  </div>
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-3">
                 <label for="tel">Phone Number</label>
                  <input type="tel" id="tel" name="tel" placeholder="xx xx xx xx" autocomplete="tel-national" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
                 </div>
-                 <div class="flex flex-col gap-4">
-               <div class="flex flex-col gap-1">
+                 <div class="flex flex-col gap-2">
+               <div class="flex flex-col gap-3">
                    <label for="email">Email *</label>
                    <input  required type="email" id="email" name="email" placeholder="Please enter your email"  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey" autocomplete="email">
                    <p class="overlinep error-message">Please enter a valid email</p>
                </div>
-               <div class="flex gap-3"><input class="regular-checkbox w-[20px] rounded-none" type="checkbox" id="newsletter" name="newsletter" value="newsletter"><label for="newsletter" class="pt-[0.3rem]">Subscribe to newsletter </label></div>
+               <div class="flex gap-3">
+                <input class="regular-checkbox w-[20px] rounded-none" type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+                <label for="newsletter" class="pt-[0.3rem]">Subscribe to newsletter </label></div>
              </div>
            <div class="flex flex-col gap-space-16-24 lg:flex-row  md:gap-6">
-                 <div class="flex flex-col gap-1 lg:w-[75%]">
+                 <div class="flex flex-col gap-3 lg:w-[75%]">
                     <label for="address">Address *</label>
                     <input required type="text" id="address" name="address" placeholder="Please enter your address" autocomplete="street-address"  class="px-1.5 py-2.5 border-[1px]  border-solid border-mediumgrey">
                  </div>
-                 <div class="flex flex-col gap-1">
+                 <div class="flex flex-col gap-3">
                     <label for="postcode">Postal code*</label>
                     <input  required type="number" id="postcode" name="postcode" placeholder="f.ex. 2100" autocomplete="postal-code"  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey w-32">
                  </div>
            </div>
           <div class="flex flex-col gap-space-16-24 md:flex-row  lg:gap-6">
-                 <div class="flex flex-col gap-1 lg:w-[50%]">
+                 <div class="flex flex-col gap-3 lg:w-[50%]">
                     <label for="city">City *</label>
                     <input  required type="text" id="city" name="city" placeholder="Please enter your city" autocomplete="address-level2"  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
                  </div>
-                 <div class="flex flex-col gap-1 lg:w-[50%]">
+                 <div class="flex flex-col gap-3 lg:w-[50%]">
                     <label for="country">Country *</label>
                     <input  required type="text" id="country" name="country" placeholder="Denmark" disabled  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
                  </div>
           </div>
 </div>
-         <!-- SHIPPING OPTIONS BOX -->
+
+<!-- OLD VERSION -->
+         <!-- SHIPPING OPTIONS BOX
          <div class="flex flex-col gap-4 pt-space-64-80">
             <h3>Shipping options</h3>
             <div class="bg-lightgrey flex justify-between lg:justify-start lg:gap-24 py-space-16-24 px-6">
@@ -139,7 +165,7 @@ import Button from '../components/PrimaryButton.astro';
                         <input type="radio" name="shippingOptions" id="ship" class="w-5">
                     </div>
                  </div>
-         </div>
+         </div> -->
          <!-- PAYMENT METHOD-->
          <!-- PAYMENT METHOD-->
          <!-- <div class="pt-space-32-48">
@@ -181,7 +207,8 @@ import Button from '../components/PrimaryButton.astro';
 
 <!-- BUTTON -->
 
-        <div class="grid"><button type=submit class="self-center myButton button px-padding-button-x py-padding-button-y mt-space-32-48 hover:bg-colorhover bg-black text-white m-auto">Confirm order</button></div>
+        <div class="grid">
+            <button type=submit class="self-center myButton button px-padding-button-x py-padding-button-y mt-space-32-48 hover:bg-colorhover bg-black text-white m-auto">Confirm order</button></div>
     </form>
 </div>
 
@@ -239,7 +266,7 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
 /* RADIO BUTTONS */
 
 .radioBar {
-  margin: 10px;
+  margin: 0px;
 }
 
 .radioBar input[type="radio"] {
@@ -249,26 +276,30 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
 }
 
 .radioBar label {
+    cursor: pointer;
     display: inline-block;
-    background-color: #ddd;
-    padding: 10px 20px;
-    font-family: sans-serif, Arial;
-    font-size: 16px;
-    border: 2px solid #444;
-    border-radius: 4px;
+    background-color: var(color-white);
+    padding: 0.5rem 0.5rem;
+    font-family: var(--font-family-accent);
+    border: 1px solid var(--color-black);
+    font-weight: var(--font-weight-light);
+  font-size: 14px;
 }
 
 .radioBar label:hover {
-  background-color: #dfd;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: 0.3s ease-in-out;
 }
 
 .radioBar input[type="radio"]:focus + label {
-    border: 2px dashed #444;
+    background-color: var(--color-black);
+     color: var(--color-white);
 }
 
 .radioBar input[type="radio"]:checked + label {
-    background-color: #bfb;
-    border-color: #4c4;
+    background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 </style>
