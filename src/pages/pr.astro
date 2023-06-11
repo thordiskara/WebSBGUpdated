@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+    <section class="pt-space-64-80 mobileGrid desktopGrid">
+        
+        <h1 class="col-span-4 pb-space-64-80 md:col-span-7">PR & Loans</h1>
+        
+        <p class="mediumBody col-span-4 md:row-start-2 md:col-span-6">For inquiries related to press or for requests for loans of garments please fill out the form below.
+        </p>
+    </section>
+
+    <section class="pt-space-32-48 mobileGrid desktopGrid">
+       <div class="col-span-full flex flex-col gap-space-32-48 md:col-span-6">
+        <h2 class="'">Inquiry <form action="" method="get"></form></h2>
+        <form name="Customer info" action="/success/" method="POST" data-netlify="true" class="col-span-full lg:col-span-4 flex flex-col gap-space-32-48">
+            
+<div class="flex flex-col gap-space-16-24">
+              <div class="flex flex-col gap-1">
+                   <label for="fullname">Name *</label>
+                   <input  required type="text" id="fullname" name="fullname" placeholder="Please enter your full name" autocomplete="name" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
+                 </div>
+              <div class="flex flex-col gap-1">
+                <label for="tel">Phone Number</label>
+                 <input type="tel" id="tel" name="tel" placeholder="xx xx xx xx" autocomplete="tel-national" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
+                </div>
+                 <div class="flex flex-col gap-4">
+               <div class="flex flex-col gap-1">
+                   <label for="email">Email *</label>
+                   <input  required type="email" id="email" name="email" placeholder="Please enter your email"  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey" autocomplete="email">
+                   <p class="overlinep error-message">Please enter a valid email</p>
+               </div>
+
+               <div class="flex flex-col gap-1">
+                <label for="items">Inquiry Type</label>
+                <select name="items" id="items" class="px-1.5 py-2.5 border-[1px]  border-solid border-mediumgrey">
+                    <option value="" disabled selected>Choose an inquiry type</option>
+                    <option value="Abject Fiber Lace Skirt">Garment Request</option>
+                    <option value="Abjection Jeans">Stylist Request</option>
+                    <option value="Abjection Tights">Press</option>
+                </select>
+            </div>
+            
+            <div class="flex flex-col gap-1">
+            <label for="inquiry">Inquiry Type</label>
+            <textarea required type="message" id="message" name="message" placeholder="Enter inquiry here.."  class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey"></textarea>
+            
+            </div>
+            <div class="grid"><button type=submit class="self-center myButton button px-padding-button-x py-padding-button-y mt-space-32-48 hover:bg-colorhover bg-black text-white m-auto">Submit</button></div>
+        </form>
+</div>
+    </section>
+</Layout>
+
+<style>
+    body{
+        accent-color: var(--color-black);
+    }
+    button p{
+        font-family: var(--font-family-accent);
+        font-size: 10px;
+        font-weight: var(--font-weight-light);
+    }
+    
+    input {
+        outline: none;
+    
+    }
+    input:focus {
+     
+      border: solid 1.5px black;
+    }
+    select:focus{
+        border: solid 1.5px black;
+    }
+    
+    /* input:focus:invalid {
+        border: solid 1.5px red;
+    
+    } */
+    
+    input:required:valid{
+        background: url("../svg/icons/check-ring.svg");
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: 92%;
+    }
+    input:not(:focus):not(:placeholder-shown):invalid {
+        background: url("../svg/icons/error.svg");
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: 98%;
+    }
+    .error-message {
+      display: none;
+    }
+    
+    input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+      display: block; 
+    }
+    
+    /* RADIO BUTTONS */
+    
+    .radioBar {
+      margin: 10px;
+    }
+    
+    .radioBar input[type="radio"] {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+    }
+    
+    .radioBar label {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 10px 20px;
+        font-family: var(--font-family-main);
+        font-size: 16px;
+        border: 2px solid #444;
+        border-radius: 4px;
+    }
+    
+    .radioBar label:hover {
+      background-color: #dfd;
+    }
+    
+    .radioBar input[type="radio"]:focus + label {
+        border: 2px dashed #444;
+    }
+    
+    .radioBar input[type="radio"]:checked + label {
+        background-color: #bfb;
+        border-color: #4c4;
+    }
+    
+    </style>
