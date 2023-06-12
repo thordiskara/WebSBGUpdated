@@ -2,7 +2,6 @@
 import "../styles/global.css"
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
-import OtherCart from '../components/OtherCart.astro';
 
 ---
 
@@ -25,10 +24,6 @@ import OtherCart from '../components/OtherCart.astro';
         <LandingHeader />
 		<main>
 			<slot />
-
-			<section id="cartOverlay" class=" z-20 cartOverlay grid w-[100vw] md:w-[37vw] lg:w-[25vw] h-[80vh] md:h-[100vh] md:top-0 fixed">
-				<OtherCart/>
-			</section>
 		
 		</main>
         <Footer />
