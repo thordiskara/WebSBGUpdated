@@ -67,7 +67,7 @@ import Button from '../components/PrimaryButton.astro';
                 </div>
                 <!-- rental period -->
                 <div class="flex flex-col gap-3"> 
-                    <p>Rental period</p>
+                    <p>Rental period *</p>
                     <div class="radioBar flex gap-space-24-32">
                        <div class="flex flex-col gap-2">
                             <input type="radio" id="threeDays" name="rentalPeriod" value="3 days">
@@ -88,12 +88,12 @@ import Button from '../components/PrimaryButton.astro';
                 </div>
                 <!-- choose dates -->
              <div class="flex flex-col gap-3">   
-                <label for="startDate">Choose start date</label>
+                <label for="startDate">Choose start date *</label>
                 <input type="date" id="startDate" name="startDate" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey w-[33%] lg:w-[25%]">
             </div>
             <!-- delivery options -->
             <div class="flex flex-col gap-3"> 
-                <p>Delivery method</p>
+                <p>Delivery method *</p>
                 <div class="radioBar flex gap-space-24-32">
                     <input type="radio" id="collect" name="deliveryMethod" value="Pick up">
                     <label for="collect">Pick up</label>
@@ -104,7 +104,7 @@ import Button from '../components/PrimaryButton.astro';
             </div>
               <!-- payment options -->
               <div class="flex flex-col gap-3"> 
-                <p>Payment method</p>
+                <p>Payment method *</p>
                 <div class="radioBar flex gap-space-24-32">
                     <input type="radio" id="mobilePay" name="paymenyMethod" value="MobilePay">
                     <label for="mobilepay">Mobilepay</label>
