@@ -23,28 +23,34 @@ import PrimaryButton from '../components/PrimaryButton.astro'
 
 
                         <div>
-                            <p class="mediumBody">Choose rental period</p>
-                              <div class="flex gap-4 pt-2">
-                                  <button class="days accentSmallBody button3">3 days</button>
-                                  <button class="days accentSmallBody button5">5 days</button>
-                                  <button class="days accentSmallBody button1">1 week</button>
+                            <p class="mediumBody">Rental period and prices </p>
+                              <div class="flex flex-col gap-2 pt-2">
+                                <div class="flex gap-5">
+                                    <p class="accentSmallBody">3 days:</p>
+                                    <p> <span class="price3"> 1</span> DKK </p>
+                                    
+                                </div>
+                                <div class="flex gap-5">
+                                    <p class="accentSmallBody">5 days:</p>
+                                    <p  class="" > <span class="price5">1</span> DKK </p>
+                                </div>
+                                  <div class="flex gap-5">
+                                    <p class="accentSmallBody">1 week:</p>
+                                    <p class=""> <span class="price1">1</span> DKK </p>
+
+                                  </div>
+                                 
                               </div>
                         </div>
 
-                            <div>
-                                <div class="flex gap-10 md:gap-7">
-                                    <p class="mediumBody">Price &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </p>
-                                    <p id="placeholder" class="mediumBody">from <span class="placeholder">1</span> DKK</p>
-                                    <p id="3days" class="hide mediumBody"> <span class="price3">1</span> DKK </p>
-                                    <p id="5days" class="hide mediumBody"> <span class="price5">1</span> DKK </p>
-                                    <p id="1week" class="hide mediumBody"> <span class="price1">1</span> DKK </p>
-                                </div>
+                            
+                                
     
                             <div class="flex gap-8 pt-2">
                                 <p class="accentSmallBody">Value Price</p> 
                                 <p class="accentSmallBody"><span class="value">1</span> DKK</p>
                             </div>
-                            </div>
+                            
 
                         <div id="add" class="pt-space-16-24">
                             <!-- <PrimaryButton link="/checkout/" text="Request rental" /> -->
@@ -65,12 +71,7 @@ import PrimaryButton from '../components/PrimaryButton.astro'
                                         <p class="material">x</p>
                                       </details>
                                 </div>
-                                <div>
-                                    <details>
-                                        <summary class="mediumBody flex flex-row-reverse justify-between">Washing Instructions</summary>
-                                        <p class="washing">x</p>
-                                      </details>
-                                </div>
+                              
                     </div>
     
             </section>
@@ -207,14 +208,12 @@ function showProduct(garment) {
     garment.materials;
     document.querySelector(".size").textContent =
     garment.measurements;
-    document.querySelector(".washing").textContent =
-    garment.wash_instructions;
+    
     document.querySelector(".value").textContent =
     garment.value_price;
     document.querySelector(".price3").textContent =
     garment.price_3days;
-    document.querySelector(".placeholder").textContent =
-    garment.price_3days;
+    
     document.querySelector(".price5").textContent =
     garment.price_5days;
     document.querySelector(".price1").textContent =
@@ -234,29 +233,29 @@ function showProduct(garment) {
     // garment.price_3days;
 }
 
-document.querySelector(".button3").addEventListener("click", displayPrice3);
-document.querySelector(".button5").addEventListener("click", displayPrice5);
-document.querySelector(".button1").addEventListener("click", displayPrice1);
+// document.querySelector(".button3").addEventListener("click", displayPrice3);
+// document.querySelector(".button5").addEventListener("click", displayPrice5);
+// document.querySelector(".button1").addEventListener("click", displayPrice1);
 
-function displayPrice3(){
-    document.getElementById("3days").classList.remove("hide");
-    document.getElementById("placeholder").classList.add("hide");
-    document.getElementById("1week").classList.add("hide");
-    document.getElementById("5days").classList.add("hide");
-}
+// function displayPrice3(){
+//     document.getElementById("3days").classList.remove("hide");
+//     document.getElementById("placeholder").classList.add("hide");
+//     document.getElementById("1week").classList.add("hide");
+//     document.getElementById("5days").classList.add("hide");
+// }
 
-function displayPrice5(){
-    document.getElementById("5days").classList.remove("hide");
-    document.getElementById("3days").classList.add("hide");
-    document.getElementById("1week").classList.add("hide");
-    document.getElementById("placeholder").classList.add("hide");
-}
-function displayPrice1(){
-    document.getElementById("1week").classList.remove("hide");
-    document.getElementById("3days").classList.add("hide");
-    document.getElementById("5days").classList.add("hide");
-    document.getElementById("placeholder").classList.add("hide");
-}
+// function displayPrice5(){
+//     document.getElementById("5days").classList.remove("hide");
+//     document.getElementById("3days").classList.add("hide");
+//     document.getElementById("1week").classList.add("hide");
+//     document.getElementById("placeholder").classList.add("hide");
+// }
+// function displayPrice1(){
+//     document.getElementById("1week").classList.remove("hide");
+//     document.getElementById("3days").classList.add("hide");
+//     document.getElementById("5days").classList.add("hide");
+//     document.getElementById("placeholder").classList.add("hide");
+// }
 
   //CART OVERLAY FUNCTION
 //   document.addEventListener('DOMContentLoaded', function() {
