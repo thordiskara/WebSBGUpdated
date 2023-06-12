@@ -4,7 +4,7 @@ import Button from '../components/PrimaryButton.astro';
 ---
 
 <Layout>
- <div class="overlinep px-body-x py-space-24-32"> <a class="hover-underline-breadcrumb" href="/rental/">Rental </a><span> / </span> <a href="/" class="navactive">Checkout</a></div>
+ <div class="overlinep px-body-x py-space-24-32"> <a class="hover-underline-breadcrumb" href="/rental/">Rental </a><span> / </span> <span class="name"> Product Name </span><span> /</span> <span class="navactive">Rental request</span></div>
 <div class="mobileGrid desktopGrid">
     <!-- Order summary -->
 <div class="col-span-full pt-space-32-48 flex flex-col gap-space-32-48 lg:col-start-9 lg:col-span-4">
@@ -15,18 +15,14 @@ import Button from '../components/PrimaryButton.astro';
             <ol class="flex flex-col gap-6 pb-6 border-b-[1px] border-mediumgrey">
                 <li class="flex gap-space-16-24">
                     <p class="mediumBody">1.</p>
-                    <p>Find the item you would like to rent in the list.</p>
+                    <p>Fill out how long you’d like to rent the item for, your preferred payment and shipping option.</p>
                 </li>
                 <li class="flex gap-space-16-24">
                     <p class="mediumBody">2.</p>
-                    <p>Choose how long you’d like to rent the item for, your preferred payment and shipping option.</p>
-                </li>
-                <li class="flex gap-space-16-24">
-                    <p class="mediumBody">3.</p>
                     <p>Fill out all the required fields with your information.</p>
                 </li>
                 <li class="flex gap-space-16-24">
-                    <p class="mediumBody">4.</p>
+                    <p class="mediumBody">3.</p>
                     <p>You will receive a confirmation email within 1-2 business days.</p>
                 </li>
             </ol>
@@ -67,21 +63,28 @@ import Button from '../components/PrimaryButton.astro';
 
                 <div class="flex flex-col gap-3"> 
                     <label for="items" class="">Item</label>
-                    <input type="text" value="Your Value" />
-                    <textarea class="item"></textarea>
+                    <input type="text" value=""  class="hidden">
+                    <textarea class="item largeBody resize-none"></textarea>
                 </div>
                 <!-- rental period -->
                 <div class="flex flex-col gap-3"> 
                     <p>Rental period</p>
                     <div class="radioBar flex gap-space-24-32">
-                        <input type="radio" id="threeDays" name="rentalPeriod" value="3 days">
-                        <label for="threeDays">3 days</label>
-                    
-                        <input type="radio" id="fiveDays" name="rentalPeriod" value="5 days">
-                        <label for="fiveDays">5 days</label>
-                    
-                        <input type="radio" id="oneWeek" name="rentalPeriod" value="1 week">
-                        <label for="oneWeek">1 week</label> 
+                       <div class="flex flex-col gap-2">
+                            <input type="radio" id="threeDays" name="rentalPeriod" value="3 days">
+                            <label for="threeDays">3 days</label>
+                         <p class="self-center"><span class="price3">700</span> DKK</p>
+                       </div>
+                      <div class="flex flex-col gap-2">
+                            <input type="radio" id="fiveDays" name="rentalPeriod" value="5 days">
+                            <label for="fiveDays">5 days</label>
+                            <p class="self-center"><span class="price5">700</span> DKK</p>
+                      </div>
+                       <div class="flex flex-col gap-2">
+                            <input type="radio" id="oneWeek" name="rentalPeriod" value="1 week">
+                            <label for="oneWeek">1 week</label> 
+                            <p class="self-center ">  <span class="price1">x</span> DKK</p>
+                       </div>
                     </div>
                 </div>
                 <!-- choose dates -->
@@ -243,7 +246,7 @@ input:focus {
   border: solid 1.5px black;
 }
 select:focus{
-    border: solid 1.5px black;
+    border: solid 2px black;
 }
 
 /* input:focus:invalid {
@@ -329,4 +332,13 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
     function showProduct(garment) {
       console.log(garment);
       document.querySelector(".item").textContent = garment.title.rendered;
+      document.querySelector(".name").textContent =
+    garment.title.rendered;
+
+    document.querySelector(".price3").textContent =
+    garment.price_3days;
+    document.querySelector(".price5").textContent =
+    garment.price_5days;
+    document.querySelector(".price1").textContent =
+    garment.price_1week;
     }
