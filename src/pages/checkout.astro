@@ -46,7 +46,7 @@ import Button from '../components/PrimaryButton.astro';
           <!-- rental info -->
             <div class="flex flex-col gap-space-16-24">
 <!-- dropdown -->
-                <div class="flex flex-col gap-3">
+                <!-- <div class="flex flex-col gap-3">
                     <label for="items" class="">Choose item</label>
                     <select name="items" id="items" class="px-1.5 py-2.5 border-[1px]  border-solid border-mediumgrey">
                         <option value="" disabled selected>Choose an item from the list</option>
@@ -63,6 +63,12 @@ import Button from '../components/PrimaryButton.astro';
                         <option value="Shadow Shirt">Shadow Shirt</option>
                         <option value="Shadow Top">Shadow Top</option>
                     </select>
+                </div> -->
+
+                <div class="flex flex-col gap-3"> 
+                    <label for="items" class="">Item</label>
+                    <input type="text" value="Your Value" />
+                    <textarea class="item"></textarea>
                 </div>
                 <!-- rental period -->
                 <div class="flex flex-col gap-3"> 
@@ -304,6 +310,21 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
 
 </style>
 
-<script  is:inline>
+<script is:inline>
 
-</script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    
+    const url = `https://evelinafalander.com/sallybjerregaarde/wp-json/wp/v2/garment/${id}`;
+    console.log(urlParams.get("id"));
+    
+    //fetch the data
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => showProduct(data));
+    
+    //populate the page
+    function showProduct(garment) {
+      console.log(garment);
+      document.querySelector(".item").textContent = garment.title.rendered;
+    }

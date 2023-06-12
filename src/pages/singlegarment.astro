@@ -233,7 +233,8 @@ function showProduct(garment) {
     document.querySelector(".img1").src = garment.main_image.guid;
     document.querySelector(".img2").src = garment.main_image_hover.guid;
     document.querySelector(".img3").src = garment.additional_image.guid;
-
+    document.querySelector(".primaryButton")
+      .setAttribute("href", `/checkout/?id=${garment.id}`);
     //CART
     document.querySelector(".cartImage").src = garment.main_image.guid;
     document.querySelector(".titleText").textContent =
