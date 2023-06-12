@@ -42,7 +42,7 @@ import Button from '../components/PrimaryButton.astro';
     <!-- form -->
  <div class="col-span-full flex flex-col gap-space-32-48 pt-space-64-80 lg:col-start-2 md:col-span-6 lg:row-start-1">
         <h2 class="'">Rental request</h2>
-        <form name="Customer info" action="/success/" method="POST" data-netlify="true" class="col-span-full lg:col-span-4 flex flex-col gap-space-32-48">
+        <form name="Customer info" action="/success/" method="POST" data-netlify="true" class="col-span-full lg:col-span-4 flex flex-col gap-space-64-80">
           <!-- rental info -->
             <div class="flex flex-col gap-space-16-24">
 <!-- dropdown -->
@@ -81,7 +81,7 @@ import Button from '../components/PrimaryButton.astro';
                 <!-- choose dates -->
              <div class="flex flex-col gap-3">   
                 <label for="startDate">Choose start date</label>
-                <input type="date" id="startDate" name="startDate" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey lg:w-[33%]">
+                <input type="date" id="startDate" name="startDate" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey w-[33%] lg:w-[25%]">
             </div>
             <!-- delivery options -->
             <div class="flex flex-col gap-3"> 
@@ -114,6 +114,7 @@ import Button from '../components/PrimaryButton.astro';
               <div class="flex flex-col gap-3">
                    <label for="fullname">Name *</label>
                    <input  required type="text" id="fullname" name="fullname" placeholder="Please enter your full name" autocomplete="name" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey">
+                   <p class="overlinep error-message">Please enter your name</p>
                  </div>
               <div class="flex flex-col gap-3">
                 <label for="tel">Phone Number</label>
@@ -133,6 +134,7 @@ import Button from '../components/PrimaryButton.astro';
                  <div class="flex flex-col gap-3 lg:w-[75%]">
                     <label for="address">Address *</label>
                     <input required type="text" id="address" name="address" placeholder="Please enter your address" autocomplete="street-address"  class="px-1.5 py-2.5 border-[1px]  border-solid border-mediumgrey">
+                    <p class="overlinep error-message">Please enter a valid address</p>
                  </div>
                  <div class="flex flex-col gap-3">
                     <label for="postcode">Postal code*</label>
@@ -208,7 +210,7 @@ import Button from '../components/PrimaryButton.astro';
 <!-- BUTTON -->
 
         <div class="grid">
-            <button type=submit class="self-center myButton button px-padding-button-x py-padding-button-y mt-space-32-48 hover:bg-colorhover bg-black text-white m-auto">Confirm order</button></div>
+            <button type=submit class="self-center myButton button px-padding-button-x py-padding-button-y mt-space-32-48 hover:bg-colorhover bg-black text-white m-auto">Send request</button></div>
     </form>
 </div>
 
