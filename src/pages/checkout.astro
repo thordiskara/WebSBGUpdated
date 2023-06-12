@@ -63,7 +63,7 @@ import Button from '../components/PrimaryButton.astro';
 
                 <div class="flex flex-col gap-3"> 
                     <label for="itemName" class="">Item</label>
-                    <textarea id="itemName" name="itemName" class="item largeBody resize-none h-8"></textarea>
+                    <textarea id="itemName" name="itemName" class="item largeBody resize-none h-8 cursor-default"></textarea>
                 </div>
                 <!-- rental period -->
                 <div class="flex flex-col gap-3"> 
@@ -89,7 +89,7 @@ import Button from '../components/PrimaryButton.astro';
                 <!-- choose dates -->
              <div class="flex flex-col gap-3">   
                 <label for="startDate">Choose start date *</label>
-                <input type="date" id="startDate" name="startDate" class="px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey w-[33%] lg:w-[25%]">
+                <input type="date" id="startDate" name="startDate" class="cursor-pointer px-1.5 py-2.5 border-[1px] border-solid border-mediumgrey w-[33%] lg:w-[25%]">
             </div>
             <!-- delivery options -->
             <div class="flex flex-col gap-3"> 
@@ -107,7 +107,7 @@ import Button from '../components/PrimaryButton.astro';
                 <p>Payment method *</p>
                 <div class="radioBar flex gap-space-24-32">
                     <input type="radio" id="mobilePay" name="paymenyMethod" value="MobilePay">
-                    <label for="mobilepay">Mobilepay</label>
+                    <label for="mobilepay">MobilePay</label>
                 
                     <input type="radio" id="bankTransfer" name="paymenyMethod" value="Bank transfer">
                     <label for="bankTransfer">Bank transfer</label>
@@ -288,12 +288,12 @@ input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
 .radioBar label {
     cursor: pointer;
     display: inline-block;
-    background-color: var(color-white);
+    background-color: var(--color-white);
     padding: 0.5rem 0.5rem;
     font-family: var(--font-family-accent);
     border: 1px solid var(--color-black);
     font-weight: var(--font-weight-light);
-  font-size: 14px;
+     font-size: 12px;
 }
 
 .radioBar label:hover {
